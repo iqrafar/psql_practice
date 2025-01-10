@@ -1,0 +1,155 @@
+DROP DATABASE
+CREATE DATABASE
+You are now connected to database "my_bookshops" as user "iqra-farooq".
+CREATE TABLE
+INSERT 0 10
+CREATE TABLE
+INSERT 0 15
+ALTER TABLE
+ book_id |                title                 | price_in_pence | quantity_in_stock | release_date | is_fiction | author_id 
+---------+--------------------------------------+----------------+-------------------+--------------+------------+-----------
+       1 | The Hitchhiker's Guide to the Galaxy |            899 |               560 | 1997-10-12   | t          |          
+       2 | The Little Prince                    |            699 |              1020 | 1943-04-06   | t          |          
+       3 | The Tale of Peter Rabbit             |            599 |              1000 | 1902-10-01   | t          |          
+       4 | Emma                                 |            522 |               390 | 1815-12-23   | t          |          
+       5 | Nineteen Eighty-Four                 |            799 |               420 | 1949-06-08   | t          |          
+       6 | The Handmaid's Tale                  |            899 |                10 | 1985-08-01   | t          |          
+       7 | The War of The Worlds                |            250 |                17 | 1897-04-01   | t          |          
+       8 | Captain Corelli's Mandolin           |            999 |                 0 | 1995-08-29   | t          |          
+       9 | A Brief History of Time              |            825 |                 0 | 1988-04-01   | f          |          
+      10 | Pride and Prejudice                  |            699 |                 4 | 1813-01-28   | t          |          
+(10 rows)
+
+UPDATE 1
+UPDATE 1
+UPDATE 1
+UPDATE 1
+UPDATE 0
+UPDATE 1
+UPDATE 1
+UPDATE 1
+UPDATE 1
+CREATE TABLE
+INSERT 0 8
+ genre_id |      genre      
+----------+-----------------
+        1 | science fiction
+        2 | children's
+        3 | romance
+        4 | fantasy
+        5 | dystopian
+        6 | science
+        7 | adventure
+        8 | classics
+(8 rows)
+
+CREATE TABLE
+INSERT 0 10
+ book_genre_id | book_id | genre_id 
+---------------+---------+----------
+             1 |       1 |        1
+             2 |       1 |        6
+             3 |       2 |        2
+             4 |       3 |        2
+             5 |       4 |        3
+             6 |       4 |        8
+             7 |       5 |        5
+             8 |       6 |        5
+             9 |       7 |        1
+            10 |      10 |        8
+(10 rows)
+
+ book_genre_id | book_id | genre_id | book_id |                title                 | price_in_pence | quantity_in_stock | release_date | is_fiction | author_id | genre_id |      genre      
+---------------+---------+----------+---------+--------------------------------------+----------------+-------------------+--------------+------------+-----------+----------+-----------------
+             1 |       1 |        1 |       1 | The Hitchhiker's Guide to the Galaxy |            899 |               560 | 1997-10-12   | t          |         3 |        1 | science fiction
+             2 |       1 |        6 |       1 | The Hitchhiker's Guide to the Galaxy |            899 |               560 | 1997-10-12   | t          |         3 |        6 | science
+             3 |       2 |        2 |       2 | The Little Prince                    |            699 |              1020 | 1943-04-06   | t          |         2 |        2 | children's
+             4 |       3 |        2 |       3 | The Tale of Peter Rabbit             |            599 |              1000 | 1902-10-01   | t          |         7 |        2 | children's
+             5 |       4 |        3 |       4 | Emma                                 |            522 |               390 | 1815-12-23   | t          |        14 |        3 | romance
+             6 |       4 |        8 |       4 | Emma                                 |            522 |               390 | 1815-12-23   | t          |        14 |        8 | classics
+             7 |       5 |        5 |       5 | Nineteen Eighty-Four                 |            799 |               420 | 1949-06-08   | t          |        13 |        5 | dystopian
+             8 |       6 |        5 |       6 | The Handmaid's Tale                  |            899 |                10 | 1985-08-01   | t          |        15 |        5 | dystopian
+             9 |       7 |        1 |       7 | The War of The Worlds                |            250 |                17 | 1897-04-01   | t          |        12 |        1 | science fiction
+            10 |      10 |        8 |      10 | Pride and Prejudice                  |            699 |                 4 | 1813-01-28   | t          |        14 |        8 | classics
+(10 rows)
+
+
+ Here are the genres for Emma:
+
+ title |  genre   
+-------+----------
+ Emma  | romance
+ Emma  | classics
+(2 rows)
+
+
+ Here are all the dystopian books:
+
+        title         |   genre   
+----------------------+-----------
+ Nineteen Eighty-Four | dystopian
+ The Handmaid's Tale  | dystopian
+(2 rows)
+
+
+ Here is the total number of books we have by each author:
+
+       author_name        | total_stock 
+--------------------------+-------------
+ H. G. Wells              |          17
+ Jane Austen              |         394
+ Antoine de Saint-Exupéry |        1020
+ Douglas Adams            |         560
+ George Orwell            |         420
+ Margaret Atwood          |          10
+ Beatrix Potter           |        1000
+(7 rows)
+
+
+ Here is the average price for dystopian books:
+
+   genre   |    average_price     
+-----------+----------------------
+ dystopian | 849.0000000000000000
+(1 row)
+
+DELETE 1
+          title           
+--------------------------
+ The Little Prince
+ The Tale of Peter Rabbit
+ Emma
+ Emma
+ Nineteen Eighty-Four
+ The Handmaid's Tale
+ The War of The Worlds
+ Pride and Prejudice
+(8 rows)
+
+ author_id 
+-----------
+        15
+(1 row)
+
+DELETE 1
+       author_name        
+--------------------------
+ Antoine de Saint-Exupéry
+ Beatrix Potter
+ Jane Austen
+ Jane Austen
+ George Orwell
+ H. G. Wells
+ Jane Austen
+(7 rows)
+
+          title           |        genre        
+--------------------------+---------------------
+ Nineteen Eighty-Four     | {dystopian}
+ Emma                     | {romance,classics}
+ Pride and Prejudice      | {classics}
+ The Little Prince        | {children's}
+ The War of The Worlds    | {"science fiction"}
+ The Tale of Peter Rabbit | {children's}
+(6 rows)
+
